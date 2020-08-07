@@ -19,13 +19,12 @@ const requestLogger = (req, res, next) =>
     next();
 }
 
-// TODO: import DAO's here
+const User = require('./api/user/user.dao');
 
 const factory = require('./api/router');
-// TODO: use the factory function with the DAO's here
-// app.use('/', factory())
+app.use('/', factory(User));
 
-app.get('/', (req, res)=> { res.send('Future Shopping Site')})
+// app.get('/', (req, res)=> { res.send('Future Shopping Site')})
 
 app.listen(port || 3050, (err)=>
 {
