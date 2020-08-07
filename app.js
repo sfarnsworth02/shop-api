@@ -24,7 +24,7 @@ const User = require('./api/user/user.dao');
 const factory = require('./api/router');
 app.use('/', factory(User));
 
-// app.get('/', (req, res)=> { res.send('Future Shopping Site')})
+app.get('/', (req, res)=> { res.send('Future Shopping Site')})
 
 app.listen(port || 3050, (err)=>
 {
